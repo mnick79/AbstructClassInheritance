@@ -22,7 +22,7 @@ namespace AbstructClassInheritance
         }
         public override string Draw()
         {
-            drawString = "Рисование прямоугольника";
+            drawString = $"Рисование {nameShape}а";
             return drawString;
         }
         public override string Fill(ColorEnum colorEnum = ColorEnum.black)
