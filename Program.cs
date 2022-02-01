@@ -16,10 +16,15 @@ namespace AbstructClassInheritance
         }
         public static void Test(int countTest)
         {
+            Random rnd = new Random();
             List<Shape> dataTest = new List<Shape>();
             for (int i = 0; i < countTest; i++)
             {
-                dataTest.Add(new Circle(i));
+                dataTest.Add(new Circle(rnd.Next(2, 15)));
+            }
+            for (int i = 0; i < countTest; i++)
+            {
+                dataTest.Add(new Rectangle(rnd.Next(5, 20), rnd.Next(2, 40)));
             }
             foreach (var item in dataTest)
             {
