@@ -10,23 +10,30 @@ namespace AbstructClassInheritance
     {
         public static void Main(string[] args)
         {
-            Shape shape1 = new Circle(4);
-            shape1.Print();
             Test(10);
         }
         public static void Test(int countTest)
         {
+            int choiceRandomClass;
             Random rnd = new Random();
-            List<Shape> dataTest = new List<Shape>();
+            List<Shape> shapes = new List<Shape>();
             for (int i = 0; i < countTest; i++)
             {
-                dataTest.Add(new Circle(rnd.Next(2, 15)));
+                choiceRandomClass = rnd.Next(3);
+                if (choiceRandomClass == 0)
+                {
+                    shapes.Add(new Circle(rnd.Next(3, 20)));
+                } else if (choiceRandomClass == 1)
+                {
+                    shapes.Add(new Rectangle(rnd.Next(1, 30), rnd.Next(1, 20)));
+                }
+                else
+                {
+                    shapes.Add(new Square(rnd.Next(1, 50)));
+                }
+
             }
-            for (int i = 0; i < countTest; i++)
-            {
-                dataTest.Add(new Rectangle(rnd.Next(5, 20), rnd.Next(2, 40)));
-            }
-            foreach (var item in dataTest)
+            foreach (var item in shapes)
             {
                 item.Print();
             }
