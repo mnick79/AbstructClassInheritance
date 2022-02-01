@@ -25,14 +25,14 @@ namespace AbstructClassInheritance
             drawString = $"Рисование {nameShape}а";
             return drawString;
         }
-        public override string Fill(ColorEnum colorEnum = ColorEnum.black)
+        public override string Fill(ColorEnum colorEnum)
         {
             return $"Наполнение формы {colorEnum}";
         }
         public override void Print()
         {
             base.Print();
-            Console.WriteLine($"Форма: \t\t\t {Draw()} \nПлощадь:\t\t {Area()} \nДействие:\t\t {Draw()}\nЗаполнение цветом:\t {Fill()}");
+            Console.WriteLine($"Форма: \t\t\t {nameShape} \nПлощадь:\t\t {Area()} \nДействие:\t\t {Draw()}\nЗаполнение цветом:\t {Fill(Program.ChoiceColorRandom())}");
         }
     }
 }

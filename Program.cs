@@ -10,7 +10,10 @@ namespace AbstructClassInheritance
     {
         public static void Main(string[] args)
         {
-            Test(10);
+            Test(20);
+            Console.ReadLine();
+
+
         }
         public static void Test(int countTest)
         {
@@ -23,6 +26,7 @@ namespace AbstructClassInheritance
                 if (choiceRandomClass == 0)
                 {
                     shapes.Add(new Circle(rnd.Next(3, 20)));
+                    shapes[i].Fill(ChoiceColorRandom());
                 } else if (choiceRandomClass == 1)
                 {
                     shapes.Add(new Rectangle(rnd.Next(1, 30), rnd.Next(1, 20)));
@@ -37,6 +41,12 @@ namespace AbstructClassInheritance
             {
                 item.Print();
             }
+        }
+        public static ColorEnum ChoiceColorRandom()
+        {
+            Array colorRandom = Enum.GetValues(typeof(ColorEnum));
+            Random rndColor = new Random();
+            return (ColorEnum)rndColor.Next(colorRandom.Length);
         }
     }
 }

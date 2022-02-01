@@ -24,14 +24,14 @@ namespace AbstructClassInheritance
             drawString = "Рисуем круг!";
             return drawString;
         }
-        public override string Fill(ColorEnum color=ColorEnum.yellow)
+        public override string Fill(ColorEnum color)
         {
             return color.ToString();
         }
         public override void Print()
         {
             base.Print();
-            Console.WriteLine($"Форма: \t\t\t {Draw()} \nПлощадь:\t\t {Area()} \nДействие:\t\t {Draw()}\nЗаполнение цветом:\t {Fill()}");
+            Console.WriteLine($"Форма: \t\t\t {nameShape} \nПлощадь:\t\t {Area()} \nДействие:\t\t {Draw()}\nЗаполнение цветом:\t {Fill(Program.ChoiceColorRandom())}");
         }
     }
 }
